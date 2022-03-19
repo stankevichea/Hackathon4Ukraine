@@ -1,0 +1,45 @@
+﻿@page "/ProvideHelpList"
+@using Hackathon4Ukraine_Team2_App.Domain
+@using Hackathon4Ukraine_Team2_App.DataAccess
+@using Hackathon4Ukraine_Team2_App.Helpers
+
+@using System.Collections.Generic
+@using Microsoft.EntityFrameworkCore
+
+@inject AppDbContext DbContext
+@inject NavigationManager NavigationManager
+
+<h3 class="mb-4">Provide help</h3>
+
+<table class="table table-hover">
+<thead class="table-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+    </tr>
+</thead>
+<tbody>
+    @{int i = 0;}
+    @foreach (var req in _requests)
+    {
+    <tr @onclick="() => NavigationManager.NavigateTo(NavigationHelper.ViewRequestHelp(req.Id))" class="clicable-row">
+        <th scope="row">@(++i)</th>
+        <td>@req.Name</td>
+        <td>@req.Category</td>
+        <td>@req.Description</td>
+    </tr>
+    }
+</tbody>
+</table>
+
+
+@code {
+    private List<RequestHelp> _requests = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _requests = await DbContext.RequestHelps.ToListAsync();
+    }
+}
