@@ -1,0 +1,33 @@
+﻿@page "/RequestHelp/{Id}"
+@inherits RequestHelpViewBase
+
+@inject NavigationManager NavigationManager
+
+<h3>Provide help to @Model.Name</h3>
+
+<div class="card text-center">
+    <div class="card-header">
+        @Model.Email
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Category</h5>
+        <p class="card-text">@Model.Description</p>
+        <a href="@("mailto:"+ Model.Email)" class="btn btn-primary wide-button">Help</a>
+    </div>
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
+</div>
+
+<div class="text-center mt-2">
+<button type="button" class="btn btn-info wide-button" @onclick=@(() => NavigationManager.NavigateTo("/ProvideHelpList"))>Back</button>
+</div>
+
+@code {
+
+}
+<style>
+    .wide-button {
+        width:200px;
+    }
+</style>
