@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>New offer</h1>
+    <form (ngSubmit)="onYesClick()" #form>
+        <mat-form-field appearance="fill">
+            <mat-label>Item name</mat-label>
+            <input required matInput [(ngModel)]="data.itemName" name="itemName">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill" style="width: 400px">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="data.description" name="description" style="height: 200px;"></textarea>
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Unit</mat-label>
+            <mat-select required [(ngModel)]="data.unit" name="unit">
+                <mat-option [value]="1">Unit</mat-option>
+                <mat-option [value]="2">Kilogram</mat-option>
+                <mat-option [value]="3">Liter</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Qty</mat-label>
+            <input type="number" matInput required [(ngModel)]="data.quantity" name="quantity">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input required matInput [(ngModel)]="data.phoneNumber" name="phoneNumber">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input required matInput [(ngModel)]="data.email" name="email">
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button cdkFocusInitial type="submit">Create</button>
+        </div>
+    </form>
