@@ -1,0 +1,27 @@
+.textarea-wrapper {
+  height: 300px;
+  margin: 20px 10px;
+  .label {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 20px;
+    margin: auto;
+    margin-bottom: -40px;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    white-space: nowrap;
+  }
+  .input {
+    width: calc(100% - 15px);
+    height: calc(100% - 45px);
+    padding: 10px;
+    padding-top: 45px;
+    background: none;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    outline: none;
+    resize: none;
+  }
+}
