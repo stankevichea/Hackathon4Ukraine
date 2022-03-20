@@ -1,6 +1,7 @@
 ﻿@page "/ProvideHelpList"
 @using Hackathon4Ukraine_Team2_App.Domain
 @using Hackathon4Ukraine_Team2_App.DataAccess
+@using Hackathon4Ukraine_Team2_App.Extensions
 @using Hackathon4Ukraine_Team2_App.Helpers
 
 @using System.Collections.Generic
@@ -19,6 +20,7 @@
             <th scope="col">
                 <div>
                     <select class="form-control" id="category" @onchange="OnCategoryChange">
+                        <option value=""><b>Category</b></option>
                         @foreach (var cat in _categories)
                         {
                             <option value="@cat.Name">@cat.Name</option>
@@ -61,9 +63,10 @@
 
     private void OnCategoryChange(ChangeEventArgs e)
     {
-        _selectedCategory = e.Value?.ToString();
-        if (_selectedCategory == null)
+        _selectedCategory = e?.Value.ToString();
+        if (_selectedCategory.IsNullOrEmpty())
         {
+            _filteredRequests = _allRequests;
             return;
         }
         _filteredRequests = _allRequests.Where(r => r.Category == _selectedCategory);
