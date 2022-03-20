@@ -63,6 +63,9 @@ export class MainPageComponent implements OnInit {
     let objects: string[];
     objects = translation.split(this.objectDelimeter);
     for (let i in items) {
+      if (objects[i] === undefined || objects[i] === '') {
+        return items;
+      }
       const fields = objects[i].split(this.fieldDelimeter);
       console.log(fields);
       items[i].title = fields[0];
