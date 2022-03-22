@@ -1,0 +1,16 @@
+﻿<div class="top-row navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Team2-App</a>
+    </div>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
