@@ -1,0 +1,27 @@
+.input-wrapper {
+  display: flex;
+  height: 30px;
+  margin: 10px;
+  .label {
+    background-color: lightgrey;
+    border-radius: 25px 0 0 25px;
+    padding: 5px 20px;
+    border: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    &.error {
+      background-color: rgb(230, 170, 170);
+      border-color: rgb(230, 170, 170);
+    }
+  }
+
+  .input {
+    width: 100%;
+    background: none;
+    border-radius: 0 25px 25px 0;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    outline: none;
+  }
+}

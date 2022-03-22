@@ -1,0 +1,42 @@
+{
+  "layout.knowledge_base": "Knowledge base",
+  "layout.contact_us": "Contact us",
+  "layout.want_help": "Want to help?",
+
+  "common.button.send": "Send",
+
+  "home.title": "Be informed. Stay Safe.",
+
+  "company.title": "You can get help from:",
+
+  "first_step.title": "We are here to help",
+
+
+  "want_help.home.title": "It’s good to be useful",
+  "want_help.home.subtitle": "What can you do for others?",
+  "want_help.home.add_org": "Add your organization to our base",
+  "want_help.home.join": "Join us as volunteer",
+  "want_help.home.write": "Write to out Knowledge Base",
+
+  "want_help.add.title": "That’s great you want to help",
+  "want_help.add.subtitle": "Please fill the form. We will review it and add spread to the world",
+  "want_help.join.subtitle": "Please fill the form. We will review it and get back to you.",
+
+  "want_help.add_org.form.company_name": "Company name",
+  "want_help.add_org.form.address": "Address",
+  "want_help.add_org.form.phone": "Phone",
+  "want_help.add_org.form.email": "Email",
+  "want_help.add_org.form.tags": "Pick tags",
+  "want_help.add_org.form.description": "Description",
+
+  "want_help.add_article.form.name": "Your name",
+  "want_help.add_article.form.title": "Title",
+  "want_help.add_article.form.tags": "Pick tags",
+  "want_help.add_article.form.article": "Article",
+
+  "want_help.join_us.form.name": "Your name",
+  "want_help.join_us.form.dob": "Your age",
+  "want_help.join_us.form.skills": "Pick skills",
+  "want_help.join_us.form.languages": "Languages",
+  "want_help.join_us.form.few_words": "Few words about you"
+}
