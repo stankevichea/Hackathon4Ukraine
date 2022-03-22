@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Supply order</h1>
+<form #form (ngSubmit)="onYesClick()">
+<div mat-dialog-content>
+    <div *ngFor="let item of data; let i = index">
+        <mat-form-field appearance="fill">
+            <mat-label>{{ item.itemName }} quantity</mat-label>
+                <input matInput type="number" [min]="0" [max]="item.initialQuantity - item.providedQuantity"
+                    [(ngModel)]="item.quantity" [name]="'item' + i">
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="buttons-right">
+    <button mat-button type="button" (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial type="submit">Supply</button>
+</div>
+</form>

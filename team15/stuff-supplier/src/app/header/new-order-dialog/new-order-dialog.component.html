@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>New request</h1>
+    <form (ngSubmit)="onYesClick()" #form>
+        <mat-form-field appearance="fill" style="width: 700px">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="data.description" name="description" style="height: 100px;"></textarea>
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Street</mat-label>
+            <input required matInput [(ngModel)]="address.street" name="street">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input required matInput [(ngModel)]="address.city" name="city">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Post code</mat-label>
+            <input required matInput [(ngModel)]="address.postalCode" name="postalCode">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <input required matInput [(ngModel)]="address.country" name="country">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input required matInput [(ngModel)]="data.email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input required matInput [(ngModel)]="data.phoneNumber" name="phoneNumber">
+        </mat-form-field>
+        <p></p>
+        <h3>Items<button type="button" (click)="newItem()" mat-button><mat-icon>add_circle</mat-icon></button></h3>
+
+        <div *ngFor="let item of orderItems">
+            <mat-form-field appearance="fill">
+                <mat-label>Item name</mat-label>
+                <input required matInput [(ngModel)]="item.itemName" name="itemName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Unit</mat-label>
+                <mat-select required [(ngModel)]="item.unit" name="unit">
+                    <mat-option [value]="1">Unit</mat-option>
+                    <mat-option [value]="2">Kilogram</mat-option>
+                    <mat-option [value]="3">Liter</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Qty</mat-label>
+                <input type="number" matInput required [(ngModel)]="item.initialQuantity" name="initialQuantity">
+            </mat-form-field>
+        </div>
+
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button cdkFocusInitial type="submit">Create</button>
+        </div>
+    </form>

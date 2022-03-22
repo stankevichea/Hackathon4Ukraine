@@ -1,0 +1,45 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title style="width: 60%; max-width: 60%">
+      {{ title }}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ orderStatus }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div *ngIf="order">
+    <mat-card style="margin-bottom: 10px;">
+      <mat-card-subtitle>Description</mat-card-subtitle>
+      <mat-card-content>
+        {{ order.description }}
+      </mat-card-content>
+    </mat-card>
+    <mat-card style="margin-bottom: 10px;">
+      <mat-card-subtitle>Address</mat-card-subtitle>
+      <mat-card-content>
+        <p *ngIf="order.address">{{ order.address.street }} {{ order.address.postalCode }} {{ order.address.city }} {{ order.address.country }} </p>
+        <p> {{ order.email }} </p>
+        <p> {{ order.phoneNumber }} </p>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-subtitle>Items</mat-card-subtitle>
+      <mat-card-content>
+        <div *ngFor="let item of order.orderItems">
+          <p><b>{{ item.itemName }}</b> </p>
+          <p>Need {{ item.initialQuantity }} {{ item.unit | unitPipe }}. Already supplied {{ item.providedQuantity }} </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div style="padding-top: 10px;" class="buttons-right">
+    <app-remove-button (removed)="remove()" style="float:left"></app-remove-button>
+    <button mat-button style="color: green;" (click)="supply()">
+      <mat-icon style="color: black">favorite_border</mat-icon>
+      Supply
+    </button>
+  </div>
+
+
+</mat-expansion-panel>

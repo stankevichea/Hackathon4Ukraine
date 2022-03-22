@@ -1,0 +1,35 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title style="width: 60%; max-width: 60%">
+        {{ offer.itemName }}
+      </mat-panel-title>
+      <mat-panel-description *ngIf="offer.unit">
+        {{ offer.quantity }}  {{ offer.unit | unitPipe }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngIf="offer">
+      <mat-card style="margin-bottom: 10px;">
+        <mat-card-subtitle>Description</mat-card-subtitle>
+        <mat-card-content>
+          {{ offer.description }}
+        </mat-card-content>
+        </mat-card>
+        <mat-card style="margin-bottom: 10px;">
+          <mat-card-subtitle>Item</mat-card-subtitle>
+          <mat-card-content>
+            <p><b>{{ offer.itemName }}</b></p>
+            <p *ngIf="offer.unit">{{ offer.quantity }}  {{ offer.unit | unitPipe }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-subtitle>Contact</mat-card-subtitle>
+          <mat-card-content>
+            <p> {{ offer.email }} </p>
+            <p> {{ offer.phoneNumber }} </p>
+          </mat-card-content>
+        </mat-card>
+    </div>
+    <div style="padding-top: 10px" class="buttons-right">
+      <app-remove-button (removed)="remove()" style="float:left"></app-remove-button>
+    </div>
+  </mat-expansion-panel>
