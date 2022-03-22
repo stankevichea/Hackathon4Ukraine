@@ -1,0 +1,21 @@
+.form-wrapper {
+  max-width: 600px;
+  margin: auto;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .send_button {
+    width: 200px;
+    height: 55px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    &:hover {
+      background-color: #b4b3b3;
+      border: 1px solid #b4b3b3;
+      cursor: pointer;
+    }
+  }
+}

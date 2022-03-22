@@ -1,0 +1,26 @@
+.checkbox-group-wrapper {
+  display: flex;
+  margin: 10px;
+  .label {
+    background-color: lightgrey;
+    border-radius: 25px;
+    padding: 5px 20px;
+    border: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .checkbox-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .checkbox {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    label {
+      display: flex;
+    }
+  }
+}
