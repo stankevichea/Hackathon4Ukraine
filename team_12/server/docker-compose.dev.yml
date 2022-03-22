@@ -1,0 +1,27 @@
+version: "3"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/dist
+    ports:
+      - 3000:3000
+    command: bash -c "while !</dev/tcp/postgres/5432; do sleep 1; done; yarn start:dev"
+    depends_on:
+      - postgres
+    stdin_open: true
+    tty: true
+    environment:
+      NODE_ENV: development
+  postgres:
+    build: docker/postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: development

@@ -1,0 +1,32 @@
+.placeCategory {
+  margin-bottom: 1em;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.content {
+  &.contentGood {
+    color: #ff4d4f;
+  }
+
+  &.contentModerate {
+    color: #d48806;
+  }
+
+  &.contentBad {
+    color: #52c41a;
+  }
+}
+
+.image {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  @media (min-width: 900px) {
+    bottom: 20px;
+    left: 20px;
+  }
+}
