@@ -1,0 +1,17 @@
+.first-cell{
+    border-right: solid 0.5px rgba(0, 0, 0, 0.1);
+}
+.second-cell{
+    border-left: solid 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.first-column {
+    position: absolute;
+    right: 5px;
+    text-align: right;
+}
+
+.second-column {
+    position: absolute;
+    left: 5px;
+}

@@ -1,0 +1,24 @@
+.ukraine-flag {
+    position: relative;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 50%;
+    text-align: center;
+    background: -webkit-linear-gradient(top, #0057b7 50%, #ffd700 50%);
+    border: 2px solid grey;
+}
+
+.warn-sign {
+    position: relative;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 50%; 
+    text-align: center; 
+    color: grey; 
+    background: red; 
+    border: 2px solid grey;
+}

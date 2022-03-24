@@ -1,0 +1,52 @@
+﻿@page "/RequestHelpForm"
+@inherits RequestHelpFormBase
+
+<h3 class="mb-3">Request help</h3>
+
+<EditForm Model="@Model" OnValidSubmit="@HandleValidSubmit">
+  <!-- Name input -->
+   <DataAnnotationsValidator />
+   <ValidationSummary />
+
+  <div>
+	<label class="form-label" for="Name">Name</label>
+  </div>
+  <div class="form-outline mb-4">    
+    <InputText type="text" id="Name" class="form-control" @bind-Value="Model.Name"  />
+  </div>
+
+  <!-- Email input -->
+  <div>
+	<label class="form-label" for="email">Email address</label>
+  </div>
+  <div class="form-outline mb-4">
+	<InputText type="email" id="email" class="form-control" @bind-Value="Model.Email" />
+  </div>
+
+  <div>
+	<label class="form-label" for="category">Category</label>
+  </div>
+ <div class="form-outline mb-4">
+    <InputSelect class="form-control" id="category" @bind-Value="Model.Category">
+        @foreach (var cat in Categories)
+        {
+            <option value="@cat.Name">@cat.Name</option>
+        }
+    </InputSelect>
+</div>
+  
+<!-- Description -->
+  <div>
+	<label class="form-label" for="Description">Description</label>
+  </div>
+  <div class="form-outline mb-4">   
+    <InputTextArea class="form-control" id="Description" rows="4" @bind-Value="Model.Description"></InputTextArea>
+  </div>
+
+  <!-- Submit button -->
+  <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-4">Send</button>
+      <button type="button" class="btn btn-info mb-4" @onclick=@(() => NavigationManager.NavigateTo("/"))>Back</button>
+  </div>
+
+</EditForm>

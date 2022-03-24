@@ -1,0 +1,7 @@
+<div>
+    <button mat-button color="warn" holdable (holdTime)="remove($event)">
+        <mat-icon style="color: black">delete_forever</mat-icon>
+        Remove
+      </button>
+    <mat-progress-bar [value]="progress" max="100" color="warn" style="width: 110px"></mat-progress-bar>
+</div>
